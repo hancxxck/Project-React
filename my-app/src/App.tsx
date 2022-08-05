@@ -10,8 +10,6 @@ function App() {
   return (
     <div>
     <ToDoCard task="test" description="this is a test" status="in progress" id="123"></ToDoCard>
-    <ToDoCard task="test" description="thisghrgrg is a test" status="in progress" id="123"></ToDoCard>
-    <ToDoCard task="test" description="this is a test" status="in progress" id="123"></ToDoCard>
     <Button id="input-button" onClick={() => console.log("this is a test")} height="30px" width="200px"></Button>
     <Input id="input-field"></Input>
     </div>

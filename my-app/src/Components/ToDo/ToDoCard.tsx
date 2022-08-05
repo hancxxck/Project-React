@@ -21,13 +21,12 @@ const ToDoCard = ({task, description, status, id,} : {task: string, description:
                 {data.map(data => {
                     return (
                         <li>
-                    <h1>{task}</h1>
-                    <p>{description}</p>
-                    <p>{status}</p>
-                    <p>{id}</p>
+                    <h1>{data.task}</h1>
+                    <p>{data.description}</p>
+                    <p>{data.status}</p>
+                    <p>{data.id}</p>
                 </li>
-                    )
-                })}
+                )})}
             </ul>
         </div>
     );

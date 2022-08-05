@@ -8,20 +8,27 @@ interface Props {
     id: string;
 }
 
-const TaskName = this.props.taskname;
+const data = [
+    { task: "code", description: "do some coding", status: "in progress", id: "1"},
+    { task: "clean", description: "do some cleaning", status: "not started", id: "2"},
 
-function Map() {
+]
 
-}
-
-const ToDoCard  = ({task, description, status, id,} : {task: string, description: string, status: string, id: string}) => {
-    const TaskName = this.props.taskname;
+const ToDoCard = ({task, description, status, id,} : {task: string, description: string, status: string, id: string}) => {
     return (
         <div>
-            <h1>{task}</h1>
-            <p>{description}</p>
-            <p>{status}</p>
-            <p>{id}</p>
+            <ul>
+                {data.map(data => {
+                    return (
+                        <li>
+                    <h1>{task}</h1>
+                    <p>{description}</p>
+                    <p>{status}</p>
+                    <p>{id}</p>
+                </li>
+                    )
+                })}
+            </ul>
         </div>
     );
 }

@@ -1,35 +1,40 @@
-import { render } from '@testing-library/react';
-import React, {useState} from 'react';
+import React from 'react';
 
-interface Props {
-    task: string[];
-    description: string[]; 
+interface ToDoCardProps {
+    task: string;
+    description: string; 
     status: string; 
     id: string;
 }
 
-const data = [
-    { task: "code", description: "do some coding", status: "in progress", id: "1"},
-    { task: "clean", description: "do some cleaning", status: "not started", id: "2"},
+interface ToDoCardListProps {
+    todoItems: ToDoCardProps[]
+}
 
-]
 
-const ToDoCard = ({task, description, status, id,} : {task: string, description: string, status: string, id: string}) => {
+const ToDoCard = ({task, description, status, id}:ToDoCardProps) => {
+    return (
+        <li>
+            <h1>{task}</h1>
+            <p>{description}</p>
+            <p>{status}</p>
+            <p>{id}</p>
+        </li>
+    );
+}
+
+const ToDoCardList = ({todoItems}:ToDoCardListProps) => {
     return (
         <div>
+            {}
             <ul>
-                {data.map(data => {
-                    return (
-                        <li>
-                    <h1>{data.task}</h1>
-                    <p>{data.description}</p>
-                    <p>{data.status}</p>
-                    <p>{data.id}</p>
-                </li>
-                )})}
+                {todoItems.map(data => {
+                    return <ToDoCard task={data.task} description={data.description} status={data.status} id={data.id}/>
+
+                })}
             </ul>
         </div>
     );
 }
 
-export default ToDoCard;
+export default ToDoCardList;
